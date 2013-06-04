@@ -6,5 +6,6 @@ HERE IS THE MENU ITEM INDEX PAGE
   <%= item.price_in_cents %>
   <%= item.price_in_dollars %>
   <%= item.category %>
+  <%= link_to "Show", menu_item_path(item) %>
   <%= link_to "Destroy #{item.name}", item, method: :delete %>
 <% end %>

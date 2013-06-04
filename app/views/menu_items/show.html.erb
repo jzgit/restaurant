@@ -1,0 +1,17 @@
+Show your menu item
+
+
+<%= @menu_item.name %>
+<%= @menu_item.description %>
+<%= @menu_item.price_in_cents %>
+<%= @menu_item.price_in_dollars %>
+<%= @menu_item.category %>
+
+<%= render 'comments/form' %>
+
+<hr>
+<% @menu_item.comments.each do |comment| %>
+  <%= comment.body %><br />
+<% end %>
+
+

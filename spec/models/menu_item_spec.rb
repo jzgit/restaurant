@@ -1,28 +1,11 @@
 require 'spec_helper'
 
 describe MenuItem do
-  describe "validations" do
-    let(:menu_item) { FactoryGirl.build(:menu_item) }
+  it { should have_many(:comments) }
 
-    it "is valid when it has all required and valid attributes" do
-      expect(menu_item).to be_valid
-    end
-
-    it "requires a name" do
-      menu_item.name = ""
-      expect(menu_item).not_to be_valid
-    end
-
-    it "requires a description" do
-      menu_item.description = ""
-      expect(menu_item).not_to be_valid
-    end
-
-    it "requires a price_in_cents" do
-      menu_item.price_in_cents = nil
-      expect(menu_item).not_to be_valid
-    end
-  end
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:description) }
+  it { should validate_presence_of(:price_in_cents) }
 
   describe "displays price in dollars" do
     let(:menu_item1) { FactoryGirl.build(:menu_item, price_in_cents: 1309)}

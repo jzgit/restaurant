@@ -3,6 +3,11 @@ class MenuItemsController < ApplicationController
     @menu_items = MenuItem.all
   end
 
+  def show
+    @menu_item = MenuItem.find(params[:id])
+    @comment = @menu_item.comments.build
+  end
+
   def new
     @menu_item = MenuItem.new
   end

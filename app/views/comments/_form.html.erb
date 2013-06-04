@@ -1,0 +1,9 @@
+<%= form_for [@menu_item, @comment] do |f| %>
+  <div class="field">
+    <%= f.label :body, 'Comment' %><br />
+    <%= f.text_field :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Be Heard!' %>
+  </div>
+<% end %>

@@ -1,5 +1,7 @@
 Restaurant::Application.routes.draw do
-  resources :menu_items
+  resources :menu_items do
+    resources :comments
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
