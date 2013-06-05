@@ -1,11 +1,21 @@
-HERE IS THE MENU ITEM INDEX PAGE
+<h1>HERE IS THE MENU ITEM INDEX PAGE</h1>
 
-<% @menu_items.each do |item| %>
-  <%= item.name %>
-  <%= item.description %>
-  <%= item.price_in_cents %>
-  <%= item.price_in_dollars %>
-  <%= item.category %>
-  <%= link_to "Show", menu_item_path(item) %>
-  <%= link_to "Destroy #{item.name}", item, method: :delete %>
-<% end %>
+<ul>
+  <% @menu_items.each do |item| %>
+    <li>
+      <h3><%= item.name %></h3>
+      <p><%= item.description %></p>
+
+      <ul>
+        <li><%= item.price_in_cents %></li>
+        <li><%= item.price_in_dollars %></li>
+        <li><%= item.category %></li>
+      </ul>
+
+      <p>
+        <%= link_to "Show", menu_item_path(item) %>
+        <%= link_to "Destroy #{item.name}", item, method: :delete %>
+      </p>
+    </li>
+  <% end %>
+</ul>
