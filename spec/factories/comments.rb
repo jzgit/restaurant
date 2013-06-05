@@ -2,7 +2,8 @@
 
 FactoryGirl.define do
   factory :comment do
+    association :menu_item
     menu_item_id 1
-    body "MyText"
+    body "fakefakefake comment"
   end
 end
