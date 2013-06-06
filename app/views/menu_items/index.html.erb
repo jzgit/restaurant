@@ -12,6 +12,15 @@
         <li><%= item.category %></li>
       </ul>
 
+      <br/>
+      Here are the ingredients to make <%= item.name %>:
+      <ul>
+        <% item.ingredients.each do |ingredient| %>
+          <li><%= ingredient.name %></li>
+        <% end %>
+      </ul>
+      <br/>
+
       <p>
         <%= link_to "Show", menu_item_path(item) %>
         <%= link_to "Destroy #{item.name}", item, method: :delete %>

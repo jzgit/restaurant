@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, 'Menu Item Name' %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -27,6 +27,17 @@
     <%= f.label :category %><br />
     <%= f.select :category, ['', 'Seafood', 'Vegetarian', 'Pasta'] %>
   </div>
+
+  <br />
+  <h2>Ingredients for your new menu item</h2>
+  <div id="ingredients">
+    <%= f.fields_for :ingredients do |form| %>
+      <%= form.label :name %>
+      <%= form.text_field :name %><br />
+    <% end %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

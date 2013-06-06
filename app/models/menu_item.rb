@@ -1,12 +1,19 @@
 class MenuItem < ActiveRecord::Base
-  attr_accessible :description, :name, :price_in_cents, :category
+  has_many :comments,
+    dependent: :destroy
+
+  has_many :ingredients,
+    dependent: :destroy
+
+  accepts_nested_attributes_for :ingredients,
+    reject_if: lambda { |ingredient| ingredient[:name].blank? }
+
+  attr_accessible :ingredients_attributes, :description, :name, :price_in_cents, :category
 
   validates_presence_of :name
   validates_presence_of :description
   validates_presence_of :price_in_cents
   validates_presence_of :category
-
-  has_many :comments
 
   CATEGORIES = ['', 'Seafood', 'Vegetarian', 'Pasta']
 

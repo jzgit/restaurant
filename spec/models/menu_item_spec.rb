@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe MenuItem do
   it { should have_many(:comments) }
+  it { should have_many(:ingredients) }
 
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }

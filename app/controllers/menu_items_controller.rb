@@ -10,6 +10,9 @@ class MenuItemsController < ApplicationController
 
   def new
     @menu_item = MenuItem.new
+    @menu_item.ingredients.build
+    @menu_item.ingredients.build
+    @menu_item.ingredients.build
   end
 
   def edit

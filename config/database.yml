@@ -12,7 +12,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: restaurant_development
+  database: restaurant5_development
   pool: 5
   username:
   password:
@@ -22,7 +22,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: restaurant_test
+  database: restaurant5_test
   pool: 5
   username:
   password:
