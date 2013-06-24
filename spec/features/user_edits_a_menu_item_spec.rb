@@ -14,6 +14,7 @@ describe 'a user edits a menu item' do
     category = 'Seafood'
 
     visit edit_menu_item_path(menu_item)
+    save_and_open_page
     expect(page).to have_content 'Edit your menu item'
     fill_in "Name", with: name
     fill_in "Description", with: description

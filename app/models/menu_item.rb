@@ -15,7 +15,7 @@ class MenuItem < ActiveRecord::Base
   validates_presence_of :price_in_cents
   validates_presence_of :category
 
-  CATEGORIES = ['', 'Seafood', 'Vegetarian', 'Pasta']
+  CATEGORIES = ['', 'Seafood', 'Vegetarian', 'Pasta', 'Meat']
 
   def price_in_dollars
     (price_in_cents.to_f / 100).round(2)
